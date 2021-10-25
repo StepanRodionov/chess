@@ -6,6 +6,7 @@ declare(strict_types=1);
  */
 class Pawn extends AbstractPiece
 {
+    /** Показывает, что пешка еще не двигалась и может сходить на 2 клетки */
     public bool $isMoved = false;
 
     public function move(string $newX, string $newY)
