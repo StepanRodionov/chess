@@ -6,7 +6,6 @@ declare(strict_types=1);
  */
 class Rook extends AbstractPiece
 {
-
     public function move(string $newX, string $newY)
     {
         /** Ладья ходит по горизонтали */

@@ -6,7 +6,6 @@ declare(strict_types=1);
  */
 class Knight extends AbstractPiece
 {
-
     public function move(string $newX, string $newY)
     {
         /** Конь ходит буквой Г, моджет проходить сквозь фигуры */
