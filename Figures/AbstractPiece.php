@@ -3,18 +3,18 @@ declare(strict_types=1);
 
 abstract class AbstractPiece
 {
-    public string $xCoordinate;
+    protected string $xCoordinate;
 
-    public string $yCoordinate;
+    protected int $yCoordinate;
 
     public bool $colour;
 
     public bool $isAlive = true;
 
     /** Каждая фигура ходит по своему, нет никакого "ходо по умолчанию" */
-    abstract public function move(string $newX, string $newY);
+    abstract public function move(string $newX, int $newY);
 
-    public function kill(string $newX, string $newY): AbstractPiece
+    public function kill(string $newX, int $newY): AbstractPiece
     {
         if ($piece = self::getPieceByCoordinates($newX, $newY)) {
             /** Фигуры одного цвета нельзя бить! */
@@ -27,7 +27,7 @@ abstract class AbstractPiece
         throw new Exception(sprintf('Не получается съесть фигуру по координатам %s:%s', $newX, $newY));
     }
 
-    public static function getPieceByCoordinates(string $xCoordinates, string $yCoordinates): ?AbstractPiece
+    public static function getPieceByCoordinates(string $xCoordinates, int $yCoordinates): ?AbstractPiece
     {
         /**
          * Метод не относится к конкретной фигуре, но позволяет получить фигуру (или null, если ее нет)

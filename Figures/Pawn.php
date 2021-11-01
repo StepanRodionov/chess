@@ -9,12 +9,12 @@ class Pawn extends AbstractPiece
     /** Показывает, что пешка еще не двигалась и может сходить на 2 клетки */
     public bool $isMoved = false;
 
-    public function move(string $newX, string $newY)
+    public function move(string $newX, int $newY)
     {
         /** Пешка ходит вперед, может ходить на 2 клетки */
     }
 
-    public function kill(string $newX, string $newY): AbstractPiece
+    public function kill(string $newX, int $newY): AbstractPiece
     {
         /**
          * Пешка бьет по диагонали, реализация родительского класса с использованием move() нам не подойдет!
