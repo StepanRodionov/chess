@@ -8,6 +8,6 @@ class Queen extends AbstractPiece
 {
     public function move(string $newX, int $newY)
     {
-        /** Ферь ходит по горизонтали и вертикали */
+        /** Ферзь ходит по горизонтали и вертикали */
     }
 }

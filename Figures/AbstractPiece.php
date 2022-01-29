@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-abstract class AbstractPiece
+abstract class AbstractPiece implements PieceInterface
 {
     protected string $xCoordinate;
 
@@ -18,6 +18,9 @@ abstract class AbstractPiece
     {
         if ($piece = self::getPieceByCoordinates($newX, $newY)) {
             /** Фигуры одного цвета нельзя бить! */
+            if ($piece instanceof King) {
+                throw new Exception('Нельзя съесть короля!');
+            }
             if ($piece->colour !== $this->colour) {
                 $this->move($newX, $newY);
                 $piece->isAlive = false;

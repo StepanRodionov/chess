@@ -4,7 +4,7 @@ declare(strict_types=1);
 /**
  * Пешка
  */
-class Pawn extends AbstractPiece
+class Pawn extends AbstractPiece implements PromotableInterface
 {
     /** Показывает, что пешка еще не двигалась и может сходить на 2 клетки */
     public bool $isMoved = false;
